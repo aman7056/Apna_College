@@ -13,6 +13,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/appBar">
         <include
+            android:id="@+id/mtoolbar"
             layout="@layout/appbar"/>
 
     </com.google.android.material.appbar.AppBarLayout>
@@ -38,14 +39,15 @@
                     android:layout_height="match_parent"
                     android:layout_margin="16dp"
                     android:layout_weight="1"
+                    android:background="@drawable/lecture"
                     android:padding="10dp"
-                    app:cardCornerRadius="7dp"
-                    android:background="@drawable/lecture">
+                    app:cardBackgroundColor="#FFFFFF"
+                    app:cardCornerRadius="7dp">
 
                     <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:src="@drawable/lecture"/>
+                        android:src="@drawable/lecture" />
 
 
                 </androidx.cardview.widget.CardView>
@@ -57,12 +59,13 @@
                     android:layout_margin="16dp"
                     android:layout_weight="1"
                     android:padding="10dp"
-                    app:cardCornerRadius="7dp" >
+                    app:cardBackgroundColor="#FFFFFF"
+                    app:cardCornerRadius="7dp">
 
                     <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:src="@drawable/syllabus"/>
+                        android:src="@drawable/syllabus" />
                 </androidx.cardview.widget.CardView>
 
 
@@ -74,12 +77,13 @@
                     android:layout_weight="1"
                     android:background="@drawable/users"
                     android:padding="10dp"
-                    app:cardCornerRadius="7dp" >
+                    app:cardBackgroundColor="#FFFFFF"
+                    app:cardCornerRadius="7dp">
 
                     <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:src="@drawable/users"/>
+                        android:src="@drawable/users" />
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
@@ -88,14 +92,16 @@
                     android:layout_height="match_parent"
                     android:layout_margin="16dp"
                     android:layout_weight="1"
-                    android:padding="10dp"
                     android:background="@drawable/profile"
-                    app:cardCornerRadius="7dp" >
+                    android:padding="10dp"
+                    app:cardBackgroundColor="#FFFFFF"
+                    app:cardCornerRadius="7dp">
+
                     <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:src="@drawable/profile"
-                        android:padding="10dp"/>
+                        android:padding="10dp"
+                        android:src="@drawable/profile" />
 
                 </androidx.cardview.widget.CardView>
 
@@ -116,12 +122,14 @@
                     android:layout_margin="16dp"
                     android:layout_weight="1"
                     android:padding="10dp"
-                    app:cardCornerRadius="7dp" >
+                    app:cardBackgroundColor="#FFFFFF"
+                    app:cardCornerRadius="7dp">
+
                     <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:src="@drawable/college"
-                        android:padding="10dp"/>
+                        android:padding="10dp"
+                        android:src="@drawable/college" />
 
                 </androidx.cardview.widget.CardView>
 
@@ -132,11 +140,13 @@
                     android:layout_margin="16dp"
                     android:layout_weight="1"
                     android:padding="10dp"
-                    app:cardCornerRadius="7dp" >
+                    app:cardBackgroundColor="#FFFFFF"
+                    app:cardCornerRadius="7dp">
+
                     <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:src="@drawable/teacher"/>
+                        android:src="@drawable/teacher" />
 
                 </androidx.cardview.widget.CardView>
 
@@ -148,13 +158,14 @@
                     android:layout_margin="16dp"
                     android:layout_weight="1"
                     android:padding="10dp"
-                    app:cardCornerRadius="7dp" >
+                    app:cardBackgroundColor="#FFFFFF"
+                    app:cardCornerRadius="7dp">
 
                     <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                       android:padding="10dp"
-                        android:src="@drawable/news"/>
+                        android:padding="10dp"
+                        android:src="@drawable/news" />
 
 
                 </androidx.cardview.widget.CardView>
@@ -166,11 +177,13 @@
                     android:layout_margin="16dp"
                     android:layout_weight="1"
                     android:padding="10dp"
-                    app:cardCornerRadius="7dp" >
+                    app:cardBackgroundColor="#FFFFFF"
+                    app:cardCornerRadius="7dp">
+
                     <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:src="@drawable/developer"/>
+                        android:src="@drawable/developer" />
 
                 </androidx.cardview.widget.CardView>
 

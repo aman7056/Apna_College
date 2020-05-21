@@ -1,19 +1,31 @@
 package com.amati.apnacollege;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
+import android.widget.Toolbar;
+
+import com.google.android.material.appbar.MaterialToolbar;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     private CardView item1, item2, item3, item4, item5, item6, item7, item8;
+    private MaterialToolbar mToolbar;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState ) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        mToolbar = findViewById(R.id.mtoolbar);
+        setSupportActionBar(mToolbar);
+        setTitle("");
 
         Toast.makeText(this, "This App is Developed by Aman Tiwari", Toast.LENGTH_SHORT).show();
 
@@ -26,19 +38,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         item7 = findViewById(R.id.item7);
         item8 = findViewById(R.id.item8);
 
-       item1.setOnClickListener(this);
-       item2.setOnClickListener(this);
-       item3.setOnClickListener(this);
-       item4.setOnClickListener(this);
-       item5.setOnClickListener(this);
-       item6.setOnClickListener(this);
-       item7.setOnClickListener(this);
-       item8.setOnClickListener(this);
+        item1.setOnClickListener(this);
+        item2.setOnClickListener(this);
+        item3.setOnClickListener(this);
+        item4.setOnClickListener(this);
+        item5.setOnClickListener(this);
+        item6.setOnClickListener(this);
+        item7.setOnClickListener(this);
+        item8.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View view) {
-        switch(view.getId()){
+        switch (view.getId()) {
             case R.id.item1:
                 Toast.makeText(this, "Lecture", Toast.LENGTH_SHORT).show();
                 break;
@@ -53,7 +65,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             case R.id.item4:
                 Toast.makeText(this, "Profile", Toast.LENGTH_SHORT).show();
-                 break;
+                break;
 
             case R.id.item5:
                 Toast.makeText(this, "College", Toast.LENGTH_SHORT).show();
@@ -71,4 +83,24 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
         }
     }
+
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.logout:
+                Toast.makeText(this, "Logout", Toast.LENGTH_SHORT).show();
+                break;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
 }
+
