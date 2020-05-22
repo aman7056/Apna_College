@@ -12,6 +12,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.android.material.appbar.MaterialToolbar;
 import com.parse.ParseException;
 import com.parse.ParseUser;
 import com.parse.SignUpCallback;
@@ -48,6 +49,11 @@ public class Signup extends AppCompatActivity implements View.OnClickListener {
             }
         });
 
+        if (ParseUser.getCurrentUser() != null){
+            gotoHome();
+        }
+
+
     }
 
     @Override
@@ -71,7 +77,8 @@ public class Signup extends AppCompatActivity implements View.OnClickListener {
                         public void done(ParseException e) {
                             if (e == null) {
                                 progressDialog.dismiss();
-                                gotoHome();
+                                startActivity(new Intent(Signup.this, infoTab.class));
+                                finish();
 
 
                             } else {

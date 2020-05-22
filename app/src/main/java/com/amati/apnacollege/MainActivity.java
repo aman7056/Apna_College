@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         mToolbar = findViewById(R.id.mtoolbar);
         setSupportActionBar(mToolbar);
-        setTitle("");
+        setTitle("Apna College");
 
         Toast.makeText(this, "This App is Developed by Aman Tiwari", Toast.LENGTH_SHORT).show();
 
@@ -65,7 +65,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
 
             case R.id.item3:
-                Toast.makeText(this, "Users", Toast.LENGTH_SHORT).show();
+               startActivity(new Intent(MainActivity.this, UsersTab.class));
                 break;
 
             case R.id.item4:
@@ -109,6 +109,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.logout:
                 ParseUser.logOut();
                 startActivity(new Intent(MainActivity.this, LoginPage.class));
+                finish();
+                break;
+
+            case R.id.editInfo:
+                startActivity(new Intent(MainActivity.this, infoTab.class));
                 break;
         }
 
