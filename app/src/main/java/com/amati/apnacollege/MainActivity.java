@@ -4,6 +4,8 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -13,6 +15,7 @@ import android.widget.Toast;
 import android.widget.Toolbar;
 
 import com.google.android.material.appbar.MaterialToolbar;
+import com.parse.ParseUser;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     private CardView item1, item2, item3, item4, item5, item6, item7, item8;
@@ -56,7 +59,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
 
             case R.id.item2:
-                Toast.makeText(this, "Syllabus", Toast.LENGTH_SHORT).show();
+                Uri uri3 = Uri.parse("http://hsbte.org.in/pdf/Stream_info/COMPUTER%20ENGG/Detailed%20Content%20Sem%204.pdf");
+                Intent syllabusLink = new Intent(Intent.ACTION_VIEW, uri3);
+                startActivity(syllabusLink);
                 break;
 
             case R.id.item3:
@@ -68,15 +73,21 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
 
             case R.id.item5:
-                Toast.makeText(this, "College", Toast.LENGTH_SHORT).show();
+                Uri uri = Uri.parse("http://gpjhajjar.ac.in/");
+                Intent collegeLink = new Intent(Intent.ACTION_VIEW, uri);
+                startActivity(collegeLink);
                 break;
 
             case R.id.item6:
-                Toast.makeText(this, "Result", Toast.LENGTH_SHORT).show();
+                Uri uri1 = Uri.parse("http://result.hsbte.com/");
+                Intent resultLink = new Intent(Intent.ACTION_VIEW, uri1);
+                startActivity(resultLink);
                 break;
 
             case R.id.item7:
-                Toast.makeText(this, "News", Toast.LENGTH_SHORT).show();
+                Uri uri2 = Uri.parse("http://hsbte.org.in/");
+                Intent newsLink = new Intent(Intent.ACTION_VIEW, uri2);
+                startActivity(newsLink);
                 break;
             case R.id.item8:
                 Toast.makeText(this, "Developer", Toast.LENGTH_SHORT).show();
@@ -96,7 +107,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
             case R.id.logout:
-                Toast.makeText(this, "Logout", Toast.LENGTH_SHORT).show();
+                ParseUser.logOut();
+                finish();
                 break;
         }
 
