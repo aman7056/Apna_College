@@ -27,6 +27,7 @@ public class Signup extends AppCompatActivity implements View.OnClickListener {
         setContentView(R.layout.activity_signup);
 
 
+        username = findViewById(R.id.username);
         email = findViewById(R.id.Email);
         password = findViewById(R.id.Password);
         signup = findViewById(R.id.SignUp);
@@ -70,15 +71,15 @@ public class Signup extends AppCompatActivity implements View.OnClickListener {
                         public void done(ParseException e) {
                             if (e == null) {
                                 progressDialog.dismiss();
-                                startActivity(new Intent(Signup.this, MainActivity.class));
-                                finish();
+                                gotoHome();
+
+
                             } else {
                                 Toast.makeText(Signup.this, e.getMessage() + "", Toast.LENGTH_SHORT).show();
                                 progressDialog.dismiss();
                             }
                         }
                     });
-
                 }
 
                 break;
@@ -98,5 +99,11 @@ public class Signup extends AppCompatActivity implements View.OnClickListener {
 
             e.printStackTrace();
         }
+    }
+
+    public void gotoHome () {
+        Intent intent = new Intent(Signup.this, MainActivity.class);
+        startActivity(intent);
+        finish();
     }
 }

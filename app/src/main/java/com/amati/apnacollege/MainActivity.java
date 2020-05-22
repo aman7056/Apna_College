@@ -108,7 +108,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         switch (item.getItemId()) {
             case R.id.logout:
                 ParseUser.logOut();
-                finish();
+                startActivity(new Intent(MainActivity.this, LoginPage.class));
                 break;
         }
 
