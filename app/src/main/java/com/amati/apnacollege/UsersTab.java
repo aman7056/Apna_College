@@ -13,12 +13,16 @@ import android.widget.Toast;
 
 import com.google.android.material.appbar.MaterialToolbar;
 import com.parse.FindCallback;
+import com.parse.GetCallback;
 import com.parse.ParseException;
 import com.parse.ParseQuery;
 import com.parse.ParseUser;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import libs.mjn.prettydialog.PrettyDialog;
+import libs.mjn.prettydialog.PrettyDialogCallback;
 
 public class UsersTab extends AppCompatActivity {
     private MaterialToolbar materialToolbar;
@@ -65,7 +69,41 @@ public class UsersTab extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(UsersTab.this, arrayList.get(position)  + "", Toast.LENGTH_SHORT).show();
+
+                ParseQuery<ParseUser> parseQuery = ParseUser.getQuery();
+                parseQuery.whereEqualTo("username", arrayList.get(position));
+                parseQuery.getFirstInBackground(new GetCallback<ParseUser>() {
+                    @Override
+                    public void done(ParseUser object, ParseException e) {
+                        if (object != null && e == null){
+
+
+                            final PrettyDialog prettyDialog = new PrettyDialog(UsersTab.this);
+                            prettyDialog.setTitle(object.getUsername() + " 's Info.");
+                            prettyDialog.setMessage(object.get("name") + "\n"
+                                    + object.get("rollno") + "\n" +
+                                    object.get("branch") + "\n" +
+                                    object.get("sem") + "\n" +
+                                    object.get("phone"))
+                            .setIcon(R.drawable.ic_account_circle_black_24dp)
+                                    .addButton("OK",
+                                            R.color.pdlg_color_white,
+                                            R.color.pdlg_color_blue,
+                                            new PrettyDialogCallback() {
+                                                @Override
+                                                public void onClick() {
+                                                    prettyDialog.dismiss();
+                                                }
+                                            }
+                                    ).show();
+
+
+                        }
+                    }
+                });
+
+
+
             }
         });
 
