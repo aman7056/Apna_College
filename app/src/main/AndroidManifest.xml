@@ -10,12 +10,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".infoTab"
+        <activity android:name=".ProfileTab"></activity>
+        <activity
+            android:name=".infoTab"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
-        <activity android:name=".UsersTab"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".LoginPage"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".UsersTab"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".LoginPage"
             android:screenOrientation="portrait" />
         <activity
             android:name=".MainActivity"

@@ -69,7 +69,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
 
             case R.id.item4:
-                Toast.makeText(this, "Profile", Toast.LENGTH_SHORT).show();
+               startActivity(new Intent(MainActivity.this, ProfileTab.class));
                 break;
 
             case R.id.item5:
