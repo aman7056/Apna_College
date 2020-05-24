@@ -71,6 +71,7 @@ public class Lecture extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 ParseQuery<ParseObject> parseQuery1 = new ParseQuery<ParseObject>("Lecture");
+                parseQuery1.whereEqualTo("topic", arrayList.get(position));
                 parseQuery1.getFirstInBackground(new GetCallback<ParseObject>() {
                     @Override
                     public void done(final ParseObject object, ParseException e) {
