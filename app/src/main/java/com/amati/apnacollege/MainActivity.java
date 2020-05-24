@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.item1:
-                Toast.makeText(this, "Lecture", Toast.LENGTH_SHORT).show();
+               startActivity(new Intent(MainActivity.this, Lecture.class));
                 break;
 
             case R.id.item2:
@@ -90,7 +90,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(newsLink);
                 break;
             case R.id.item8:
-                Toast.makeText(this, "Developer", Toast.LENGTH_SHORT).show();
+               startActivity(new Intent(MainActivity.this, Devloper.class));
                 break;
         }
     }
