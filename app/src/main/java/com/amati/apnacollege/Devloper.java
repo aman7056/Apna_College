@@ -2,6 +2,9 @@ package com.amati.apnacollege;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
+import android.app.AlertDialog.Builder;
+import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -72,7 +75,7 @@ public class Devloper extends AppCompatActivity  {
         pay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Uri uri = Uri.parse("");
+                Uri uri = Uri.parse("https://paytm.me/K2wd-T9");
                 startActivity(new Intent(Intent.ACTION_VIEW, uri));
             }
         });
@@ -94,11 +97,13 @@ public class Devloper extends AppCompatActivity  {
         mail.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent sendIntent = new Intent();
-                sendIntent.setAction(Intent.ACTION_SEND);
-                sendIntent.putExtra(Intent.EXTRA_EMAIL, "apnaamati@gmail.com");
-                sendIntent.setType("text/plain");
-                startActivity(sendIntent);
+                Context context;
+                AlertDialog alertDialog = new AlertDialog.Builder(Devloper.this).create();
+                alertDialog.setMessage("apnaamati@gmail.com" + "\nat7056222557@gmail.com");
+                alertDialog.setTitle("Gmail ID");
+                alertDialog.setIcon(R.drawable.info);
+                alertDialog.setCancelable(true);
+                alertDialog.show();
             }
         });
 

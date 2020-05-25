@@ -69,13 +69,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="56dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="4dp"
         android:layout_marginEnd="195dp"
         android:text="@Apna Amati"
         android:textColor="#F44336"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.529"
         app:layout_constraintStart_toEndOf="@+id/image"
         app:layout_constraintTop_toBottomOf="@+id/textView8" />
 
@@ -98,8 +99,8 @@
         \nand Friends so that all the college group \ncontent and details they can study and update
         \nthe App is still under developing so for any suggestions
         \n\n CONTRIBUTE PLEASE
-        \nContribute for us by Paying 3rd option"
-        android:textSize="18sp"
+        \n\nContribute for us by Paying 3rd option"
+        android:textSize="14sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent"

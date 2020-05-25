@@ -111,10 +111,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(new Intent(MainActivity.this, LoginPage.class));
                 finish();
                 break;
-
-            case R.id.editInfo:
-                startActivity(new Intent(MainActivity.this, infoTab.class));
-                break;
         }
 
         return super.onOptionsItemSelected(item);

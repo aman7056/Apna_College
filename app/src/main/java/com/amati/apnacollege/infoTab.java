@@ -6,6 +6,7 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
@@ -14,6 +15,7 @@ import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.google.android.material.appbar.MaterialToolbar;
+import com.parse.Parse;
 import com.parse.ParseException;
 import com.parse.ParseUser;
 import com.parse.SaveCallback;
@@ -41,15 +43,25 @@ import com.parse.SaveCallback;
 
         final ParseUser parseUser = ParseUser.getCurrentUser();
 
+        if (ParseUser.getCurrentUser().get("name") != null || ParseUser.getCurrentUser().get("rollno") != null
+                ||ParseUser.getCurrentUser().get("branch") != null
+                ||ParseUser.getCurrentUser().get("sem") != null
+                ||ParseUser.getCurrentUser().get("phone") != null){
+
+            startActivity(new Intent(infoTab.this, MainActivity.class));
+            finish();
+        }
+
+
         saveInfo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (name.getText().toString().equals("") || roll.getText().toString().equals("") ||
-                        branch.getText().toString().equals("") ||
-                        sem.getText().toString().equals("") ||
+                        !branch.getText().toString().equals("computer") ||
+                        !sem.getText().toString().equals("4th") ||
                         phone.getText().toString().equals("") )
                 {
-                    Toast.makeText(infoTab.this, "Details are required", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(infoTab.this, "Enter Correct details", Toast.LENGTH_SHORT).show();
                 }else {
                     parseUser.put("name", name.getText().toString());
                     parseUser.put("rollno", roll.getText().toString());

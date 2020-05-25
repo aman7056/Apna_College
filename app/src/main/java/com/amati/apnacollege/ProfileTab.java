@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.material.appbar.MaterialToolbar;
 import com.parse.ParseUser;
@@ -48,7 +49,7 @@ public class ProfileTab extends AppCompatActivity {
         editBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(ProfileTab.this, infoTab.class));
+                Toast.makeText(ProfileTab.this, "Contact Developer", Toast.LENGTH_SHORT).show();
                 finish();
             }
         });

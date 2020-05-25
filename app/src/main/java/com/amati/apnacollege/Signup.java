@@ -50,7 +50,8 @@ public class Signup extends AppCompatActivity implements View.OnClickListener {
         });
 
         if (ParseUser.getCurrentUser() != null){
-            gotoHome();
+            startActivity(new Intent(Signup.this, infoTab.class));
+            finish();
         }
 
 
@@ -61,7 +62,7 @@ public class Signup extends AppCompatActivity implements View.OnClickListener {
         switch (v.getId()){
             case R.id.SignUp:
                 if (username.getText().toString().equals("") || password.getText().toString().equals("") || email.getText().toString().equals("")){
-                    Toast.makeText(this, "Please Fill Your Details", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "Please Fill Your Details" +" Or Enter Correct Details ", Toast.LENGTH_SHORT).show();
                 }else {
                     ParseUser college = new ParseUser();
                     college.setUsername(username.getText().toString());
